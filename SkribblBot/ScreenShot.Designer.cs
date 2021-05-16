@@ -41,16 +41,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.Location = new System.Drawing.Point(-811, 300);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ScreenShot";
             this.ShowIcon = false;
-            this.Text = "ScreenShot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Screen Shot";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Magenta;
+            this.Move += new System.EventHandler(this.ScreenShot_Move);
             this.ResumeLayout(false);
 
         }

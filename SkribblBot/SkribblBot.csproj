@@ -36,7 +36,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronOcr, Version=2021.2.1.0, Culture=neutral, PublicKeyToken=c2cbcea5ea3f6d8d, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronOcr.2021.2.1\lib\net40\IronOcr.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateDrawingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDrawingForm.Designer.cs">
+      <DependentUpon>CreateDrawingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CursorControl.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -56,6 +72,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Language.cs" />
     <Compile Include="LoadingBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +87,9 @@
     <Compile Include="ScreenShot.Designer.cs">
       <DependentUpon>ScreenShot.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateDrawingForm.resx">
+      <DependentUpon>CreateDrawingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,10 +104,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ScreenShot.resx">
       <DependentUpon>ScreenShot.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +122,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filltool.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouse_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouse_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

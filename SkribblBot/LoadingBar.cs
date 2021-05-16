@@ -13,5 +13,9 @@ namespace SkribblBot {
         public LoadingBar() {
             InitializeComponent();
         }
+
+        private void LoadingBar_Move(object sender, EventArgs e) {
+            this.Text = $"Progress - {this.Left},{this.Top}";
+        }
     }
 }

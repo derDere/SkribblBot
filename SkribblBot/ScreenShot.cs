@@ -21,5 +21,9 @@ namespace SkribblBot {
             }
             return b;
         }
+
+        private void ScreenShot_Move(object sender, EventArgs e) {
+            this.Text = $"Screen Shot - {this.Left},{this.Height}";
+        }
     }
 }
