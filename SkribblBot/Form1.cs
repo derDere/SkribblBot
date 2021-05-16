@@ -635,7 +635,7 @@ namespace SkribblBot {
         }
 
         public void DrawGen2(string word) {
-            string path = CreateDrawingForm.ImagesFolder() + "\\" + word + ".json";
+            string path = CreateDrawingForm.ImagesFolder() + "\\" + word.ToLower() + ".json";
 
             cmds.Clear();
 
@@ -696,7 +696,7 @@ namespace SkribblBot {
             if (isDrawing)
                 return;
             isDrawing = true;
-            DrawGen2(word);
+            DrawGen2(word.ToLower());
             StartDrawingActions();
             loadWin.startBtn.Text = word;
         }

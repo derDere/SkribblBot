@@ -136,7 +136,7 @@ namespace SkribblBot {
             WordsMissingLb.Items.Clear();
 
             foreach (WordInfo wordInf in form1.Words.Values) {
-                string path = ImagesFolder() + "\\" + wordInf.Word + ".json";
+                string path = ImagesFolder() + "\\" + wordInf.Word.ToLower() + ".json";
                 if (System.IO.File.Exists(path)) {
                     WordsExitsLb.Items.Add(wordInf);
                 } else {
@@ -286,7 +286,7 @@ namespace SkribblBot {
                 CurrentWordLab.Tag = wi;
                 CurrentWordLab.Text = wi.Word;
 
-                string path = ImagesFolder() + "\\" + wi.Word + ".json";
+                string path = ImagesFolder() + "\\" + wi.Word.ToLower() + ".json";
                 string jj = System.IO.File.ReadAllText(path);
 
                 DrawAction[] actions = Newtonsoft.Json.JsonConvert.DeserializeObject<DrawAction[]>(jj);
@@ -312,7 +312,7 @@ namespace SkribblBot {
 
             WordInfo wi = CurrentWordLab.Tag as WordInfo;
 
-            string path = ImagesFolder() + "\\" + wi.Word + ".json";
+            string path = ImagesFolder() + "\\" + wi.Word.ToLower() + ".json";
 
             System.IO.File.WriteAllText(path, jj);
 

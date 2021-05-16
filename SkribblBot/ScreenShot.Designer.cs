@@ -45,7 +45,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Location = new System.Drawing.Point(-811, 300);
+            this.Location = new System.Drawing.Point(117, 300);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ScreenShot";
